@@ -1,0 +1,842 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+<style>
+    .div1 {
+     height : 60px;
+     width : 100%;
+     background-color : #C91F22;
+     border: transparent;
+     position: sticky;
+     top:0;
+  }
+
+ .list1 {
+   	 font-family: 'Play', sans-serif;
+   	 color: white;
+     margin-left: 25px;
+     margin-top: 20px;
+   	 float: left;
+     text-decoration: none;
+  }
+  .managelist{
+    position: absolute;
+    list-style-type:none;
+    height:150px;
+    width:130px;
+    box-shadow: 0px 0px 10px grey;
+    float:left;
+    margin-top: 3%;
+    margin-left: 78%;
+    z-index: 1;
+    background-color: white;
+  }
+  .managelist>li {
+    padding: 10px;
+    width:100%;
+    margin-left:-25px;
+  }
+  .managelist>li:hover {
+   background-color:  rgba(40, 26, 48, 0.14);
+  }
+
+   .list2 {
+    font-family: 'Play', sans-serif;
+    color: white;
+    margin-top: 20px;
+    margin-right: 30px;
+    float: right;
+    text-decoration: none;
+    }
+    .show{
+    display: block;
+  }
+  .hide{
+    display: none;
+  }
+    .pro {
+      height: 60px;
+      width: 60px;
+      float: right;
+      margin-top:0;
+    }
+  .div2 {
+  	height: 400px;
+  	width: 100%;
+  	border:transparent;
+    background-image: url(https://s2.rdbuz.com/rbpool/banner.png);
+    background-size: 100% 100%;
+    margin-top: 20px;
+  }
+  .googleplay {
+  	height: 53px;
+  	width: 14%;
+  	background-image:url(https://s1.rdbuz.com/rbpool/ic_googleplay.svg);
+    background-size: 100% 100%;
+  	border:1px solid transparent;
+  	margin-top: 19%;
+  	margin-left: 8%;
+  	border-radius: 6px;
+
+  }
+  .div3 {
+  	height: 600px;
+  	width: 100%;
+  	border: 1px solid transparent;
+  	display: flex;
+  	flex-wrap: wrap;
+  }
+  .div3-1 {
+  	height: 98%;
+  	width: 25%;
+  	border: .5px solid transparent;
+    border-radius: 5px;
+    margin-left: 5%;
+  	margin-top:.5%;
+    background-image: url(https://s2.rdbuz.com/rbpool/how_it_works/screens/img_find_active.png);
+    background-size: 100% 100%;
+  }
+  .div3-2 {
+  	height: 98%;
+  	width: 69.7%;
+  	border: .5px solid transparent;
+    margin-left: 0%;
+  	margin-top:.5%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .div3h {
+      font-size: 35px;
+      font-family: 'Montserrat', sans-serif;
+      color: black;
+      margin-left: 10%;
+      width: 100%;
+    }
+    .div3-2-1{
+      height: 20%;
+      width: 90%;
+      margin-left: 5%;
+      border:1px solid transparent;
+    }
+    .div3-2-2{
+      height: 60%;
+      width: 90%;
+      margin-left: 5%;
+      border:1px solid transparent;
+      justify-content: space-around;
+
+    }
+     .g{
+       margin-top: 22%;
+       font-size: 19px;
+       font-family: 'Montserrat', sans-serif;
+    }
+    .border{
+      height: 5px;
+      width: 17%;
+      border:1px solid #38f25d;
+      border-radius:4px;
+      background-color:#38f25d;
+      margin-top: 13%;
+      margin-left: 5%;
+      transition: 1s;
+    }
+     .p3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 25px;
+      color: #3b364a;
+      float: left;
+      margin-left: 10%;
+      cursor: pointer;
+    }
+    .small{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      color:rgb(62, 62, 82);
+    }
+    .under{
+      height: 15%;
+      width: 100%;
+      border:.5px dotted grey;
+      border-radius: 25px;
+      margin-top: 5%;
+    }
+    .gift{
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      color:rgb(62, 62, 82);
+      float: right;
+      margin-right: 45%;
+      letter-spacing: 1px;
+    }
+
+    .div4 {
+  	height: 400px;
+  	width: 100%;
+  	border: transparent;
+  	background-color: #ECECEC;
+  	display: flex;
+  }
+
+  .div4-1 {
+  	height: 80%;
+    width : 20%;
+  	box-shadow: .5px .5px.5px .5px grey;
+    background-color: white;
+  	margin-left: 4.5%;
+  	margin-top: 3%;
+  }
+  .h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      color: #433B54;
+      margin-left: 10%;
+
+    }
+  .box4img {
+    margin-left:30%;
+    width:40%;
+    height: 30%;
+    margin-top: 5%;
+
+  }
+  .box4h {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      color: #433B54;
+      text-align: center;
+      margin-left: 10%;
+  }
+  .box4p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: #433B54;
+      text-align: center;
+      margin-left: 12.5%;
+      width: 75%;
+  }
+  .div5 {
+  	height: 600px;
+  	width: 100%;
+    border: transparent;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .div5-2 {
+  	height: 20%;
+  	width: 45%;
+  	border:none;
+  	margin-left: 2.5%;
+  }
+  .div5-1 {
+  	height: 20%;
+  	width:100%;
+  	border:transparent;
+  }
+  .div6 {
+  	height: 350px;
+  	width: 100%;
+  	background-color: #ECECEC;
+  	border : transparent;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .div6-1 {
+    height: 98%;
+    width : 60%;
+    border : transparent;
+  }
+  .div6-2 {
+    height: 98%;
+    width: 39%;
+    border: transparent;
+  }
+  .div7 {
+
+  	width: 100%;
+  	border :transparent;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .div7-1{
+    height: 90px;
+    width: 80%;
+    margin-left: 10%;
+    border-bottom:.5px solid grey;
+  }
+  .ans-p{
+
+    width:80%;
+    margin-left:10%;
+  }
+  .ques {
+    width:100%;
+    font-size: 18px;
+    color: #575859;
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+
+  }
+  .ans {
+    width:100%;
+    font-size: 15px;
+    color: #575859;
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+
+  }
+
+
+  .h3 {
+    font-size: 20px;
+    color: #575859;
+    float: left;
+    font-family: 'Play', sans-serif;
+    font-weight: 400;
+  }
+  .plus {
+    float: right;
+    height: 39%;
+    width: 7%;
+    margin-top: 3%;
+    margin-right: 3%;
+border-radius:15px;
+    border:.5px solid rgba(100, 100, 100, 0.77);
+    background-color:#BF394B;
+    color:white;
+  }
+  .black {
+  	height: 400px;
+  	width: 100%;
+  	background-color: #222534;
+    border:1px solid transparent;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+  .black1 {
+    height: 98%;
+    width: 60%;
+    border:transparent;
+    display: flex;
+
+  }
+  .black2{
+    height: 98%;
+    width: 36%;
+    border: 1px solid transparent;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+  .q {
+    font-size: 35px;
+    color: #575859;
+    text-align: center;
+    font-family: 'Play', sans-serif;
+
+
+  }
+  .para {
+    font-size: 14px;
+    color: #575859;
+    text-align :start;
+    font-family: 'Play', sans-serif;
+    float: left;
+    margin-top: -3%;
+    margin-left: 30px;
+  }
+  .div5-2>h4{
+    font-size: 20px;
+    color: #575859;
+    text-align :start;
+    font-family: 'Play', sans-serif;
+    float: left;
+    margin-top : 3%;
+    margin-left: 30px;
+  }
+  .p1 {
+    font-size: 18px;
+    color: grey;
+    float: left;
+    margin-left: 3%;
+    font-family: 'Play', sans-serif;
+  }
+    .logo {
+    height :60px;
+    width :18%;
+    float: left;
+    margin-top: 3%;
+    }
+    .par {
+      color: #A2AAA8;
+      font-family: 'Montserrat', sans-serif;
+      margin-top: 25%;
+      line-height: 30px;
+
+    }
+    .icon {
+      height : 70%;
+      width: 10%;
+    }
+    .ul1{
+      list-style-type: none;
+      margin-top : 3%;
+      line-height: 35px;
+      margin-left: 5%;
+
+
+    }
+    .li1{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color:  #E4E4E4;
+        text-decoration:none;
+
+    }
+    .hr {
+      height: 7px;
+      width: 100px;
+      background-color: #DC3947;
+      border: none;
+      border-radius: 4px;
+      margin-top: 15%;
+      margin-left: 10%;
+    }
+    .hide{
+      display: none;
+    }
+    .show{
+      display: block;
+    }
+    .color{
+      color:#38f25d;
+    }
+
+</style>
+ <div >
+   <img width="100%" src="https://st.redbus.in/seo/ind/website-banner_1280x450_1631689052.png">
+  </div>
+  <div class="div3">
+  	<div class="div3-1">
+    </div>
+  	<div class="div3-2">
+     <p class="div3h">How it works</p>
+     <div class="div3-2-1">
+       <p class="p3" id="e1" onclick="slid1(this.id)"><b>Active</b><br><span class="small">account</span></p>
+       <p class="p3" id="e2" onclick="slid2(this.id)"><b>Request</b><br><span class="small">a ride</span></p>
+       <p class="p3" id="e3" onclick="slid3(this.id)"><b>Choose</b><br><span class="small">from rides</span></p>
+       <p class="p3" id="e4" onclick="slid4(this.id)"><b>Pay</b><br><span class="small">using points</span></p>
+       <div class="border" id="s11"></div>
+     </div>
+     <div class="div3-2-2 show" id="g1">
+       <ul style=" display: inline-block;">
+         <li class="g">Open / Download redbus App</li>
+         <li class="g">Verify your account by your official mail ID</li>
+       </ul>
+        <ul style="display: inline-block;">
+         <li class="g">Go to rPool tab and activate your account</li>
+         <li class="g">Use this account to find / offer ridecxo</li>
+       </ul>
+       <div class="under">
+         <img src="https://s2.rdbuz.com/rbpool//how_it_works/img_rewards.svg">
+         <p class="gift">Activate your account and get <b>50 Points</b></p>
+       </div>
+     </div>
+     <div class="div3-2-2 hide" id="g2">
+       <ul style=" display: inline-block;">
+         <li class="g">Tell us your start point and destination</li>
+         <li class="g">Schedule repeat rides for easy use</li>
+       </ul>
+        <ul style="display: inline-block;">
+         <li class="g">Choose no. of seats, date and time</li>
+        </ul>
+       <div class="under">
+         <img src="https://s2.rdbuz.com/rbpool//how_it_works/img_recurring.svg">
+         <p class="gift">Carpool easier by setting <b>recurring rides</b></p>
+       </div>
+     </div>
+     <div class="div3-2-2 hide" id="g3">
+       <ul style=" display: inline-block;">
+         <li class="g">Choose from a list of verified car-owners
+         </li>
+         <li class="g">Join the ride from the pickup point</li>
+       </ul>
+        <ul style="display: inline-block;">
+         <li class="g">Contact your rider without sharing number</li>
+         <li class="g">Track your ride ontime</li>
+       </ul>
+       <div class="under">
+         <img src="https://s2.rdbuz.com/rbpool//how_it_works/img_phone_masing.svg">
+         <p class="gift">Activate your account and get <b>50 Points</b></p>
+       </div>
+     </div>
+     <div class="div3-2-2 hide" id="g4">
+       <ul style=" display: inline-block;">
+         <li class="g">Before ride buy points using credit card<br> & Netbanking</li>
+         <li class="g">Rate your rider and save as them<br> as favorite to<br>
+       </ul>
+        <ul style="display: inline-block;">
+         <li class="g">Auto-debit payments using points, (No<br> variable cost & No cash payment)</li>
+       </ul>
+       <div class="under">
+         <img src="https://s2.rdbuz.com/rbpool//how_it_works/img_auto-debit_points.svg">
+         <p class="gift">Activate your account and get <b>50 Points</b></p>
+       </div>
+     </div>
+    </div>
+  </div>
+  <div class="div4">
+  	<div class="div4-1" style="border-radius:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <hr class="hr">
+      <h2 class="h2">Introducing rPool Points</h2>
+        <img  style="width:200px;border-radius:20px;height:170px;position:relative;right:40px;bottom:15px" class="box4img" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/201912/Capture_5_0.png">
+    </div>
+  	<div class="div4-1" style="border-radius:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <img style="width:200px;border-radius:20px;height:150px;position:relative;right:40px;margin-bottom:10px;" class="box4img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAATcAAACiCAMAAAATIHpEAAAB41BMVEVFIGLYTlUcZaj///8yGEzbT1VCH2LeUFTKP0vzhYI5HWM9HFfiUVQ9HmJDIGLRR1CnPlo6BFpAHlz84uHjo8/UTVUyG2NzLl/chM8ASILyfXrHSVc/FV64RFhsLF+9AB5iKWC/RlgcWJSRN1zWPUWKNV1YJmEAPnmwQVnXRExQI2F2L1/3uLasGia/Gh85WJIoGGN/Ml5fMIV9aY/UMz3lSEn0wMCdO1tuWIO0GR+TDQ6rn7XkjpLnfn+ZOluPN1xuOGiFdZX1m5j/4QDGGBckdbH10yvbYGb11tfnlNGiaKqyhrKpACT48jjIOUXIVyU5XoDlk5bwxcdhRnjrmzWyebLWQVjZ094vAGb7+jnnvzHu3TXgpy7CQiMxLFlkd6TFvcxhL1XppKfecXbs6e9ZPHIAFWbeZ0v2viDidkX+2AZxUFJnR1dWNFzhvhuGWYyXiKUdCEDde8+6ZbSGR2zgi9GIUIvjms+TSJfFLlJ7GDqCHkqTZqSmfKqhHi3nxOPKEgccLmKmhkGoWnNOFkRZVIrEanhIRHJwPn9uIkHJssyyXa2UHzTScCaHZ0vjsC/RgyrAnzTJaSd7W1B7rdMJW6VxhGJ3cVlMGUpEaHYZFBY9JlJmFhoTMWNdJETRCh4fAEnxyJ0DAAAalklEQVR4nO2dj1/b5p3HJYQeOUISMo7kpLJkObYUWQbPWjCOC5ilIYG0C1wgKy2BHgPTbumapUnb9LI1a2/trblLlqy7H73rpdc/9b6PZBvbGNuSCXJfr34SG1uSjZ433x/PLz0iiB+TBESTw6GwSfgT0piwgdUUNgl/4hd+4hZErPWTnwYRq4TNq66wSfiSQAyLm/64uKH4T9yCiE//xC2IWHVY0sLR3ATE86wrWZbdn+gECXUWK4WNq6FOpwfIWJbQnYqoKpHxbCaTyY5HFMvkT5pTm5A9NG56mBsws3OlVLZYzEZSViltOFhGuqQU9ZAtDuWGlhtizVKkmFFEQ7exb/IHktVxVgiFV118aWjCWxs3XleKkZKGABgSBCQgUH2fgDJGuJ46RGmhlRuKF1M6Rua+EzRC1zSTbZy2GGGJMMWGDatJrScWEQs8YON5gRB4tqilipmiyHqmx7N60Q7TUZE5POGthZuAinpcg8hWKtlIMIyinlLeTUVQjiByhCmKRDZUR+WdYeVmF4lIMVvJppRxdjyiAreIMe7oRdMs6uMpVUuJYXJjhygttHOzwVPTGSNdrBQJGXPLpVJm0TaLZjYiEmIqzADHpoaVG/hppCQbRU3Xc0WTdf10oagVTb2o27mIlVZC5CYMU1poywvZXERkiWw2osiR7Dhwy0SKClvMZotaJpVNp8NMqEgfovDWnk8rcR1qbIZhIsLRc3bccXII6Ybt2Fo6J5fCtDfeGF5ulipDPRfqIQieEK584MocizQbWg4IdofIjRWHKLy1cuPT4xgMYm2iqfeDLRWLRYVg2UI2HWI+ZZWh5Yb0IiEQvDZeLEZMvtaTVEgX07YeGVegqR9ivVdgu7jpeHe9bG4Em3F4Xi+mNE3JErbmpEU1ki2WZIEnMpaj2SF2iHQbOh2PdNdLANd6cmzKYm01IkOjKpLxepIqTiYOuORImkVhtrK6poWw7Y1PQ4O0WGJxFFZsArspL0cqLLRPM064vW/DM3TqqvXkBNuI22pKFgRZsWq9bbxRdARTGefD7XwbnqFTV21nB7UPXiumWbZy0LsLryFPhBnb8ImhYaq9dRxfYI1iNlN0DqpqLKGZYY/KDM+MGk+dzpEnnBzRXFMTUOhjWUM0dOqq40kCp3CD2WEFSQsvsyYStBwTo2PHiaWnggydDiO3sdHRie5HCGM9DvAjYYiGTl0FLcjE6GiPI0ZHR4/P2Ydp6NTVsZXskEabyI4N6tR8ZahqvX1yC+ZxjU8JgHBAcMM0dOqqr7PuVeqfg7rshljY06u7S+D9pIX33nxpuBrq56x75oAJQegWygbn5m9GzW9utqVPmmZc0cdntL3PGUqNs8Bhcj9vUs+vGCy3+ho6/e3t37zXDI1hFDHt5HKOUVIlgHdC3CbGRjG2UCvCvoZO3/xt0xuGFuM8nh+EEM/zrGymFe44yPV12r68bGLM9cvRsbHjYx106JSRDNTabYh4VlOPweb6Ou3+vWxitFXH06jwlxYaouk036H3C7G6MnBtsD8afRrO2OhhjR2D0QUbOmUUs+OEPQTkKoOCG7xQDbXbWoPcIflNEoGGThmxc99X9P0EIbAaOZivHgOvmsbaSR2BEcsnuCBDp0xa7mjpid/d/iABfwpbGgjccRBz1WCWaGwSjkTn03cDDJ0Cto5fhX53+/KdDxCuEg4EbhBUYGN1AEKdWvTrN04fkGv23bGJhnxiE5DvYjFiE7ZEk1Aieuct1395MzRuY0Q9X9ap7b9x+vTp3yc6kQv+a/ynBTp1gC0RvdAkO5r4oBb22EH6WPyVoM1QJuoR3iPzA6Z27eN7937/RnMvex8xTehK1X9aoA9GkRLrVIvuRrGTurvkAYYWfWE7ymjcOPbh/q+unbl35uMHYHGn91HLx2rmeOQXj3Xl5ruPnDG8QSV8EtFqbLJJMxRstX/hnl4A/w/G7YhuNOyKH5r375255jI7ffoBuGrzAb1cdWK0KzjZb1rwppsJ7EfwM0rFXmnSa9TFBP/RKc+NB5ga5otbZ6HRDzG1j0/X9ODetdNvtHAjutqb22nQhapA+DU3B4cJwf7oFx953E7VoJ06dQpzI+rDTkLwC74CkWquw344Zn7y+hmsBjdMsJXbRPfMMAb2dnT48z10Ksk1KnV7O1X3Umxv69GDOB18dDEQtoPKxf4n98/U5TrpA3i+du306bbh/bHumaGrm/or3HskXapnJZuocZvxNDkZo6iqmxk8Bb9SbjBun5w50AOM7MG1mtG1Briapx7ZxJroxs1XWnjz5nu02fw3c7m95ona+eOnn/5+p2o3Tk72Olr8T2MKwo2YmHDRjfF2E7Zr17CdPfjYS6gQ4BDvXRkntLD230Mi+whC4/Tt3/xTofnTLjdP1KUH+EzvX6ASdbI1W+48ge7YuUHIeQj6w8Pf/fF1V5999vpnv8J6oyGZ/8NifnHx80ePTAxuIjA3X4sR/Pb25ct33m/YG7TsD/w0dvdP9/HJnrl3dyfaKEhARw3GjS+X0/nPFxfLZz2dPw//W3X27KPFz8vG+fMvvnA/Um9q+f5dfoZO39u6fPny7X+utwj4P3/EN+ztlerstfuvf21DQP60WufmO1cH5uY63JePRkZGvhIXP/9q5Ej97HPL3VsDF7it5Wvo9M33Lt/ONeK+/S9/ZhvcXtvZuPf6J58giMn3Ny7UI5wcDJt/bm75HwKRc+dGRoyFc+7Ps/jtuZbHyF/+4h0zcv6LBu8g3PwNnb659fTgsmxkNsW313aq987c/xrXme7tXKpz69zV0jsz+C6GW/6pnx1tZ4d0/sVg3PzVTd9j9INWNNRvD7htbJx5/Qc3h93fuFhvpHYeueg9G6cfUoeaVxOLdW7nzh6tBrcv8OcnAnLzXcVaMVt6Hw7iGzX74MwnX2Nun+D4lvh74khuvRWgJJCEGtxelGuampr65dQvQVN1PT53PNz8XnW60rp8wgG3yZ1/PXPmawhv/7YzGyXQB5tvEcGvJulyxo2mVPsO/mGd29knyWQyn4f/8HRn9ebVq0/d13nYvPjdsXDzfdXpSrwzt1OvxHY+u3fm03uf7mxEUeKtzct/fSvhq3LYJ7ejgU7lPW7nfr34/Pnz1e2n25jW9dVnm8+vJ1fz26vJ1a3nyfKLGrfvMLeg8c23I620XpTdVO99Za06+9lns9WdKPrgr3cu3778t/cJ9qTqIVDn+bZc9ri9yCev37r+zfVnb69uwwvgtv128tZNgHdr63l+8cnZGrcvUWBu/odOV0pHcTsFDfwYNWvjytv7m1DTg4pe0Gv2A3BDj/MeN/DSp2+XkzdvJa9/g59Wn916tpncfLb9dn7rOnjs4vfnPG4PUXP9zW0+9P3LfBcs0npRtsttvqZTbv8b3px462+X//4WCnzNvg9e9bo+/yT/6s88L03euZNMbt66c2t7azP59vbWLcC3dTX59tPk9rPr4LvvuNzeecTX2gvEQdTs85f6L1hkpaU73+X2i5rmT9W5QZ7GeSHwVTg+uNXdbGKq7HJ7AeEfwhj4ZHIVrCwP3DAy10vzt64+T9Y89fw75QkvLQSYlOR/6HR8xWl21GY/bfRb4h2J9xMDLEniowg1e0Nflj1u5x8uQt7MJ5/eunUHjO45trfVt7+BSHd1C/Jpspz3Atz5d/LfoqDNrAD1hJWWq4s7cEt85YJDg0wb9l8S/mHe4zZy9vFifqpcBkLgks+2NsvPNzdvAskyfpSnwNqu1Lg95oN1IQUaOomsNF8m22F84at//8ea5cuBp78G4PYoP+VxuwIRLg813nKtxpbczrsVkiTeOLX40MOG/fRJUHMLMqNmfEWsG1wiAdw8VTdqL1xu+4G/PTC3sXKdG4D7Lg+MAFTS5ba5ehX/2Ermm7BBPi1PBTS3YCNOkXpTKzq7E61x29m/dKnOreanjd7eE+GGHh9wG7ky8kV5sZy/mt/Mb928s725eie/+ezp9afJqcXH567U2wvfTZUxtyATugItRhCpRzi0fjFR43Zxg6q/quUF+KPkuKDY/HPjn0DoerXRH3LlxaPF5LOtW89vbj99trm6ubl1B4wu72L7j7P/4Oovr+a/DziFMFjzMbJSH3gGP6169kZcuOBxW693IQnEAFcf+S4JNLKauY1cOf9k8Zvrq9e3N7dcbt98k7/+FGq8gO0/b1119V9T+YdQCfE/oQaKFqhQkciKXq+LJC61xrdGF7kw0DURfrGhb8ut3ADcw8Xt5GbyFmTUVTC2rfz24rfYSf/brY1AA//XU+VHwSbXBO3+j6wcXGccvTjbpLt1bARbGmTOpV9u/EMIby3cRq7g+kgy3+gIyS9+58a29xfL/4NT7eKvXy2Xg3ELvI57M7hEtEmNEUC2kh0Am39uTw5xq9VH6srnPWwjucXy/+Zr3PJfusOnfhsMtWaQ/2UuxgFct/VfBVYcCJtvbhDeDnGr10ewANs7tUx6Nr+Yr3FzA1yAxFDrIw+wPMg4xLjckeuY8kRqwCtSfRYEfY/TwqNXD40v4PpIDVu9/nHuiyceSsztSZB6r2AHj9wYnEV0XIQCsc7KoBfy+iwJDm8duY28mMLg8uUvrjQ2nasNpb4D3KYacyN85NSB1nHH4FbSQjs5gWe11MDY/HIbe3QUN1wfgdD34sqhPee/A27lbwMM2A941Sm48EqkYuKpFi48AS9uSjipla4zGF4GN9zVC+GtEze3f2TqRaftwK1cfhxgnsOgV53iaR8rK0opZxJ45WbB1gxrZeVYLrb3ye2xmxY6cxs5+7gTNo8bDnD+fhfhb0ZNN3IgN4G4L45niQJ/BWnMjjnXCdBI563nvwdui1P+82mPodM+p1yNHyCD1HtcCzv4LUtN55onNrjAWuY4ND9GzgPnb7/80n/9rUevYr9Trsg64mNC5iogt/M166o/2t42HpjdaJN8/ZKXt457rwXjXhq30cYshl5qweaP28tbsDc0bsKoD40Jdfn7JUHnWJ2EAnJrnVPeXUEvrR+qddzbFZjby9dQrePerrDhdNFQrePerrDhdNFQrePerrDhdFHQqULB5WMJ1rDhHK0Q1nHv0afXrLDpHK3hWse9Xb3PX2CR+zhpDdc67u3qefqCbWnIFuMnDq7L0ClNdlrFQjrJu+D1cf6qUijReI0hxAo8i07oRoFH3wKb0Q2GMUWadvHVGMI7S3YX3DrGRbcG4oZsLk7nDEnKmSRRseIp5URW3D566JTRZZGzRSZlkUqKVhRSlUhaVRmL5xRLYuBxAuT6KAFbYVI2pxmczgmlVJxLmyfB7ei0wOhxWTHFCpEj1Hc5PpeSaWZBsw1VUGSnYrGOfAJLcvdRAoHnnDjDm1yc44EbLZ+Inx49gxR8NG2bFm9xvEWIulmB9hgtxnXgVnAkM82Z6ZdvcH2UQECcgZiSJRFcWknlmJO5V8rR67gzZonTZMuuMLJqIFEjVJohKgu6Cn7q6HEHvGIouBFwbrwpijbrWM6CfjL3HutygSOjAxdbTNmswaiyVEKwKUfkNNVOQfJXTDY+HPENYg1e+gueeLxuH7gpvk1lz740hJf4C+zS3WbUeFkTxHg/3E0M7b2BFydRX/ZbHsGu5HgdZPe4GSrKVcx4pX6tFPJ761Q/ixEMWPOgswE+75cb0jlRZhiOg7TfFQUrclqJq02JR7rYvkZQD/m4sICemxsEHL03t+T/830UAbyTRci9MTY8m8CNJDVN4Ry8hWUJbxccht8JAourxvCRGje8OIEgVzjeX1j0cdVplqIyvsvd9PFJ6ob/uUl9YCspjqSbKSll8rYqqQxwkwoFYGJIGjQmWE2RVBPxFUlnLQUJimVbkuLIHjfZUSSRrZC0VPEDruvQaTabzZDZTAZKi5+B23T9NTxlM7S7lSbdI0gaP7t74Il2X3jfgLfC4dldam46Q5ONAzK1N12NsI+/vMgwkk4rcYWUU5xoYW6kpdIiGBFUQGmWVBzghqBCzDKcpnGGIaUVqNBjbrkcJ+YYS1foBc1Pjug2dJpdm9mNTd+IxXYz2blYdQa4zVQns+RkLDaX2V2eqy7Bvpm1paXl6hoki73YZJZeXpuG3Tcy8/ChmRg9s3ajCruWd+GD07vUWmx5ic7O4M/Px+DDe9nsZBWeB+TGOQWDsSoWl2OUgu76qaqSkulyI1maTBM81I5JNU4rpTRny7IucnGPm8qUKgpZSNGCr9TabUZNJkZRsRvU2gx1Y4+qzlBLFBScmp/Dz0szFEXBq0kqtkTFdqnlDJmhqOwcNbdGrS1Tu3PUzPQyRS9TVDWLHXw5Rs3tUrEZKjYdo2bgzRz8EcB+4dBlqlvY64tbnE0zVqlU0jhVdrmBn4IhpT1uEOq4OMQ2SxLViqIqssFICqPVuNElsVSRUzS+62D/3LrNqAFuS1DKXaCyRi1lMgAmOU/tTk8vTVJzEKym56jdeeoGmNFujALz3MXQskAGHvN1bnsZHBir03twFDWXrAL95WmaisFnk8uUBMxnqN0uBtcfN17nVN40eFoiHNfedF3l0mnOsCXgJmscBC/eYWhDY+gKSyvvQo3e41bhDDanATeTrfioMXdLC8CNzFSptbW1G1BC2o1vLiqqirnNZzNgTmvTM4B1bYbEeGLUpASmB4Ab3HDbH3MDXDi+VSkAmJnGYHfhALBV+Pr5Qe0th9gKx3ESD88KZ8lQDeEwSJpjJIZgIP7ZCK8rw9kQ4XQ2xTFKzU8dHt4A6RLHGQrXd12k69Cpy22Nms/ckCbBJnZr3GLU/+163IDR5O4SRrQ3h/MFON4SMCPnqWWgk41hbku0l4h3sd1ibhnwXPDiOZcbPprsZm799COZmi0QrJnTeYHVNVY3kQaCei+yc7YN4T4ed+93hHQdIV1DAorrrGab7n/E6jmTJXhNQ1r/d0/tOnSKuZESBDlqF4c6sBSXG9CJUTdmKEBFVauAZA32LUPZabCpTHYeX8OwhD9QpcgGN/gMrodMu18Bb+gb1CTEAPdoam8ge6utMoc8NgjfEwq3s/A7wf3ZuPsR3oYf7iGCe6hw8EHW0vtODd2HTvf2cCV/b17Kkpm9eTK7t0dLe0uwIbO3tLQnZdcoCWwmm1maW8K1DQhw4HFZeh4nyOz8ErlHL+3h7wE/XZrPwpslGr4yS+IDvDc0vJnvWqnrtySDK+H1E6NEH/R6DJ26O+sN09ommmy838PGAmbnHYHjW4ZsHIoPJOs7qOnmDuL6F7R8cdjcohfWXbtbv7veG9yAt8DOLC1lsgcF71CfgJ3MQCMSx4kGEa4t4dV7E97lxMh9hXdEq9RsFNw3cYm6lOj5Rf0NnR5lEXTKGbdEsdFf3gFbRVQcxdsR7KYC/eBA7u2eeS+y4UsCUK2PyH1gef1F69GLdgJFL65H7fVEYp9I7K9H0QV4tZ+4eIG6i9b3E+v7F/rg1t/QKa22dG16/of9jrEKksnaLDRmaLIxVEPXfRDbmhlPQV0cH07bgS457ANbTk/rPO8sELoDaZF1TKTHHU1P27yddlgzntPtdI4lEhchU1Hr+xBbNmzqLkHt/EDtXIBtF+9CftugqFm8ZaMfbj2GThm36AxjG5zb7eYOY0miInKpUoqBNksFuJmcUqikLCYlMkrJcvfTFvxXSVGUGD0H3Bi1pECrsRJkOKI3NzYlWRyhKhapcaykEEUwB06kUymFoC3JynGkQ5aUBR643Y1SOztUFNBUdy5RVJS6CAg3Nu5Ssxf3qUtRaha4XeyHW1cTkAzSEkloBZdUS3RERnVKIk2nCsi2ZIMXFVk3Zcm0LceWHMQZMilrtkozrCEVckxB1E3bdrkpaWTIKY3VgqyF0Q+3EsvFOb3AxUlHkQyF5Q3yXclwJIOG1lachnaVpagscLv0Q3Vno/pDgpqdre7MgoFFqerGxuxdyo6ue9yq/XDregtsklTwLzd0UdHThikWFFm1FzA3kbP1kq4vsBz2UyKu24phcwu8VDAUhmQM3bIJpSDRkliQXHvj4yXbAX4vx0/ZlIg4nYE/nS5KaUtK8zwAw9xyDLyKk2yOs00TYXtbp2Z3qP271IV1itrfAL+sVqMXwE/3XajUDtGXn/ZIC0qBNByV1zE3hywoehxae8BNZQjNslKO4HIzOU52gFua5yy9YNG0ymuindM5zY7LLjeVdUQrpb5cbgYeD89xusOZyONmSLJK006ORjyclYH9FOriiNjA1xRHq9Uf7oKJ4W13PW53o7P4quM+uPVIC0pB1RxFMSt62nGkgmLGIUK53AxWNESxUNGAm5COF6yKLJo86agy1KNpVpacQkkpiGmwN8gLShx8WVXBGl8KN7eNIEDGZN2hFq9R4LYUBGg/QZYV3D04L1xIRBGKomgUqmtRqHsk4AGvErgCAm/wnkQi2ju8dQ84TEVLlyzNIRfEUomMp2wrB81ZJQ75sQJAGUOz4pKRyzkWQzpxMScZGh5QZdIGo8YVJq2JEGIquD/R0AyJNrQgVzP1wY1wl4JyJ4MLtSWqhdorobYB/0TrGxc7IAkwotXrFtg4gdKMN5hFMpJtCxg041ZBGJxpaYZ0b89G1l97LQUG/yfdAS8GD4bhg0gy2J3I/JfqSKHeltSX/N4Cm5GO6R5sfnQsJT1eDdstsDsqbEgdNGy3wO6osCF1UOA12U5SYUPqoF5pYSgUNqTD8rWOe2gKm9JhDd0tsDsqbEqHNXS3wO6osCkd1tDdArujwqZ0WMHudXrSCpvSIQW/Vc6JKmxMhzTUV50eKGxMhzTUV50eKGxMhzTUV50eKGxM7Qp4C+wTV9ic2jXUixE0KWxO7fqRpIWh4zbcV50eKGxO7Qp6v5eTVtic2jTILXBPVGGDalMIixG0iqbdfF57Pvq4sEG1KfTFCBTDclJpSSypNOMoEvxTLbpD1ShsUG0KPS3Ary+paXWBo0nJSFdKhrqQ7jTxJmxQbfJ9C+zjlyRaYhrQMaIipkuVkqV0qhqFDapVghA6ttolmu50ViYF/2iy03hH2KRaNWxDp/SRqSFsUq36UQydugqbVKt+FEOnrsIm1arBF+w9KYVNqkU/jqFTV2GjatFA67ifrMJG1aIfx9Cpq/8HlktPFSUrDwQAAAAASUVORK5CYII=">
+      <p class="box4h">RECHARGE</p>
+      <p class="box4p">Add Points with a choice of netbanking, credit/debit cards and wallets.</p>
+    </div>
+  	<div class="div4-1" style="border-radius:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <img  style="width:200px;border-radius:20px;height:150px;position:relative;right:40px;margin-bottom:10px;" class="box4img" src="https://cdn6.aptoide.com/imgs/1/4/8/148f736d3a18efeebd1acb47e12201de_fgraphic.png">
+      <p class="box4h">AUTO DEBIT/CREDIT</p>
+      <p class="box4p">Set your points for auto debit after each ride.</p>
+    </div>
+  	<div class="div4-1" style="border-radius:20px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+      <img style="width:200px;border-radius:20px;height:150px;position:relative;right:40px;margin-bottom:10px;" class="box4img" src="https://images.freekaamaal.com/post_images/1573551495.png">
+      <p class="box4h">REDEEM</p>
+      <p class="box4p">Your points can be redeemed against TMW Card & Amazon Gift Card as well.</p>
+    </div>
+  </div>
+  <div class="div5" >
+  	<div class="div5-1" ><p class="q">Why RedBus rPool?</p>
+    </div>
+
+
+  	<div class="div5-2" style="margin-left:30px">
+     <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHP4qLrFM4nlL-nJZZRkL_yLa7CZdPZJYzTmdhAXVjeWwUBpajUXuDplOb1kWmfWj9Uaw&usqp=CAUy" style="float: left;width:300px;height:110px;border-radius:5px">
+     <h4>An Eco-smart Solution</h4>
+
+    </div>
+  	<div class="div5-2">
+     <img  src="https://static.startuptalky.com/2020/03/Redbus---startuptalky.png" style="float: left;width:300px;height:110px;border-radius:5px">
+     <h4>Privacy Protected</h4>
+
+    </div>
+  	<div class="div5-2">
+     <img  src="https://couponswala.com/blog/wp-content/uploads/2020/07/redbus-new-user-696x392.png" style="float: left;width:300px;height:110px;border-radius:5px">
+     <h4>Only Verified Users</h4>
+
+    </div>
+  	<div class="div5-2">
+  <img  src="data:image/jpeg;base64,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" style="float: left;width:290px;height:110px;border-radius:5px;">
+     <h4>Save More on every ride</h4>
+
+    </div>
+  	<div class="div5-2">
+  <img  src="https://pbs.twimg.com/media/CvJrM19XEAAzYDw.jpg" style="float: left;width:300px;height:110px;border-radius:5px">
+     <h4>Networking on the go</h4>
+
+    </div>
+  	<div class="div5-2">
+      <img  src="https://pbs.twimg.com/media/DJvtGaVWsAEtb9r.jpg" style="float: left;width:300px;height:110px;border-radius:5px">
+     <h4>No Transaction Charges</h4>
+
+    </div>
+
+  </div>
+  <div class="div6">
+    <div class="div6-1">
+      <p class="q">What is rPool?</p>
+      <p class="p1">rPool is an eco-smart option for handling all your travels to work by connecting you with<br> fellow professional riders. As our cities are growing, increased traffic adds to the chaos<br> and pollution.</p>
+      <p class="p1">rPool is an eco-smart option for handling all your travels to work by connecting you with<br> fellow professional riders. As our cities are growing, increased traffic adds to the chaos<br> and pollution.</p>
+    </div>
+    <div class="div6-2">
+      <img src="https://s3.rdbuz.com/rbpool/what_is_rpool/img_carpool1.svg" style="float: right;
+      margin-top: 30%;">
+    </div>
+  </div>
+  <div class="div7">
+    <div class="div7-1">
+      <h3 class="h3">1. ABOUT RPOOL</h3>
+      <button class="plus" id="v1" onclick="i1(this.id)">+</button>
+    </div>
+    <div class="ans-p hide" id="s1">
+      <p class="ques"><b>What is rpool?</b></p>
+      <p class="ans">rPool is an online carpool platform that connects Driver(s) (herein after referring to those who offer rides) and Rider(s) (herein after referring to those who are searching for rides). Both parties herein after referred to as “Riders”.
+      </p>
+      <p class="ques"><b>What is carpooling?</b></p>
+      <p class="ans">Carpooling is a smart way to commute by sharing just one vehicle. A car owner, offers ride and chooses fellow riders who travel along the same route. In addition to being a more affordable way to commute, it also helps the environment by reducing the number of cars on the road and bringing down the pollution.
+
+      </p>
+      <p class="ques"><b>How is rPool different than other carpooling cab services?</b></p>
+      <p class="ans">rPool is not a cab service. It is an online carpool platform that connects Driver(s) and Rider(s). rPool caters exclusively to working professionals, who are verified riders.
+    </div>
+    <div class="div7-1">
+      <h3 class="h3">2. ACCOUNT ACTIVATION</h3>
+      <button class="plus" id="v2" onclick="i1(this.id)">+</button>
+    </div>
+    <div class="ans-p hide" id="s2">
+      <p class="ques"><b>How can I register for the service?</b></p>
+      <p class="ans">Download the redBus App, tap on the rPool tab, next complete and activate your rPool profile to start riding.
+      </p>
+      <p class="ques"><b>Can I register on rPool using my Google / Facebook account?</b></p>
+      <p class="ans">Yes, you can register using either your Google or Facebook account.
+
+      </p>
+      <p class="ques"><b>How is the verification done?</b></p>
+      <p class="ans">We send an email verification to your corporate email ID that you provide us at the time of creation of your profile. You can either enter the 6-digit OTP sent to the email to verify the account or click on the link given in the mail which will automatically verify the account.
+
+    </div>
+    <div class="div7-1">
+      <h3 class="h3">3. OFFERING A TRIP</h3>
+      <button class="plus" id="v3" onclick="i1(this.id)">+</button>
+    </div>
+    <div class="ans-p hide" id="s3">
+      <p class="ques"><b>How do I offer Trips?</b></p>
+      <p class="ans">Simply provide us with the details of your vehicle including the registration number, type and make of vehicle along with your driving license details. After submitting these details, you can offer Trips by entering your start and end location. Based on the aforesaid information, you will receive a notification on the app suggesting the Rider(s) seeking a Trip on or along the same route. Accordingly, you may then invite Rider(s) basis your selection.
+
+      </p>
+      <p class="ques"><b>How can I coordinate for the pickup point with the Rider(s)?</b></p>
+      <p class="ans">The locations of Rider(s) who have accepted the invite are provided on the live tracking map. You can use the group chat to coordinate with them on their pick-up point. You can also directly call them through the app, which ensures your privacy is protected through mobile number masking.</p>
+
+      <p class="ques"><b>Whether there is any higher/default pricing fixed for the Trips?</b></p>
+      <p class="ans">rPool has a cap on the maximum rPool Points that can be charged for each kilometre to be travelled on a given Trip. You may refer the detailed terms and conditions of rPool to know more about point system.</p>
+
+    </div>
+    <div class="div7-1">
+      <h3 class="h3">4. SEEKING A TRIP</h3>
+      <button class="plus" id="v4" onclick="i1(this.id)">+</button>
+    </div>
+    <div class="ans-p hide" id="s4">
+      <p class="ques"><b>How do I seek a Trip?</b></p>
+      <p class="ans">You can find a Trip by simply entering your pick-up and destination details. Once the details have been entered by you, you will be able to see a list of Drivers travelling on the given route. Basis your requirement you may send them an invitation to ride them.
+      </p>
+      <p class="ques"><b>How do I know if someone has invited me for a ride?</b></p>
+      <p class="ans">When you are chosen as a co-rider you will receive an invitation notification. You may then view the ride and the Driver’s profile before accepting or rejecting the invitation.</p>
+
+      <p class="ques"><b>How can I organize the pickup point with the Driver?</b></p>
+      <p class="ans">You can utilize the live tracking page to manage your pick-up point. Kindly note that this is a carpooling service and not a taxi, so choose an amicable pickup point that benefits you without causing any inconvenience to the Driver. You can chat or call securely through the app to co-ordinate with the Driver and other co-riders.</p>
+
+    </div>
+    <div class="div7-1">
+      <h3 class="h3">5. PAYMENT/ REDEMPTION</h3>
+      <button class="plus" id="v5" onclick="i1(this.id)">+</button>
+    </div>
+    <div class="ans-p hide" id="s5">
+      <p class="ques"><b>How is payment handled on rPool?</b></p>
+      <p class="ans">rPool works on a system of prepaid points called rPool Points. These points are agreed between a Driver and Rider before confirmation of rendering and/or availing of a given Trip. These rPool points will be transferred from the rPool Wallet of the Rider to the rPool Wallet of the Driver after each Trip. This will ensure a hassle and cash free ride.
+      </p>
+      <p class="ques"><b>What is the default fare set by rPool?</b></p>
+      <p class="ans">rPool has a capping on fixation of maximum rPool points for every kilometer to be travelled on a given Trip. The maximum rPool Points that can be charged by a Driver from a Rider for a Hatchback is 5 rPool Points per kilometer, for a Sedan is 5 rPool Points per kilometer, MUV/SUV is 5 rPool Points per kilometer, Premium vehicles is 5 rPool Points per kilometer for a given Trip.
+      </p>
+
+      <p class="ques"><b>What is value of a rPool Point to the Rupee?</b></p>
+      <p class="ans">1 rPool Point=1 Rupee</p>
+
+    </div>
+    <div class="div7-1">
+      <h3 class="h3">6. SAFETY</h3>
+      <button class="plus" id="v6" onclick="i1(this.id)">+</button>
+    </div>
+    <div class="ans-p hide" id="s6">
+      <p class="ques"><b>How secure is the system?</b></p>
+      <p class="ans">All users are required to verify their phone number and official email id for registering with rPool. Aside from this, users can configure their social network profiles, so other users can make informed decisions before connecting. We carry out regular checks on users and invite other users to report any false information by users.
+      </p>
+      <p class="ques"><b>Will my phone number be seen during the calls?</b></p>
+      <p class="ans">No, your contact number is hidden through call masking and will not be visible to anyone.
+      </p>
+
+      <p class="ques"><b>Will my profile visible to everyone on the rPool?</b></p>
+      <p class="ans">1 rPool Point=1 Rupee</p>
+
+    </div>
+
+  </div>
+  <div class="black">
+    <div class="black1">
+      <ul class="ul1">
+        <li><a  class="li1" href=""><b>About redBus</b></a></li>
+        <li><a  class="li1" href="">About us</a></li>
+        <li><a  class="li1" href="">Contact us</a></li>
+        <li><a  class="li1" href="">Mobile version</a></li>
+        <li><a  class="li1" href="">Redbus on Mobile</a></li>
+        <li><a  class="li1" href="">Sitemaps</a></li>
+        <li><a  class="li1" href="">Offers</a></li>
+        <li><a  class="li1" href="">Careers</a></li>
+        <li><a  class="li1" href="">Values</a></li>
+      </ul>  </a>
+      <ul class="ul1">
+        <li><a  class="li1" href=""><b>About redBus</b></a></li>
+        <li><a  class="li1" href="">T&C</a></li>
+        <li><a  class="li1" href="">Private Policy</a></li>
+        <li><a  class="li1" href="">FAQ</a></li>
+        <li><a  class="li1" href="">plog</a></li>
+        <li><a  class="li1" href="">Agent Registraitons</a></li>
+        <li><a  class="li1" href="">Insurance Partner</a></li>
+      </ul>
+      <ul class="ul1">
+        <li><a  class="li1" href=""><b>Global sites</b></a></li>
+        <li><a  class="li1" href="">Singapore</a></li>
+        <li><a  class="li1" href="">India</a></li>
+        <li><a  class="li1" href="">Malaysia</a></li>
+        <li><a  class="li1" href="">Indonesia</a></li>
+      </ul>
+    </div>
+    <div class="black2">
+       <img class="logo" src="https://s3.rdbuz.com/web/images/home/sgp/r_logo.png">
+       <p class="par">redBus is the world's largest online bus ticket <br>booking service trusted by over 17 million<br> happy customers globally. redBus offers bus <br>ticket booking through its website,iOS and <br>Android mobile apps for all major routes.</p>
+
+    </div>
+  </div>
+<script>
+    var count=0;
+      function i1(ids){
+        count=count+1;
+        var a=ids.slice(1,2);
+        var b="s"+a;
+        console.log(b);
+        console.log(count);
+        var c=document.getElementById(b);
+        if(count===1){
+         c.classList.add("show");
+         c.classList.remove("hide");
+       }
+       if(count===2){
+        count=0;
+        c.classList.remove("show");
+         c.classList.add("hide");
+       }
+      }
+
+
+  var count=0;
+    function myFunciton(){
+      count=count+1;
+      if(count===1){
+          var element=document.getElementById("b1");
+          element.classList.add("show");
+          element.classList.remove("hide");
+        }
+        if(count===2){
+          count=0;
+          var element=document.getElementById("b1");
+          element.classList.add("hide");
+          element.classList.remove("show");
+        }
+    }
+
+    function move1(ids){
+        var a = document.getElementById(ids);
+
+        var b=ids.slice(1,2);
+
+        if(b==="1"){
+          b="2";
+        }
+        else if(b==="2"){
+          b="1";
+        }
+        var c="m"+b;
+        console.log(c);
+        var d=document.getElementById(c);
+        a.classList.add("addColor1");
+        a.classList.remove("addColor2");
+        d.classList.remove("addColor1");
+       d.classList.add("addColor2");
+
+    }
+
+    function move3(ids){
+       var o =document.getElementById(ids);
+       var p=ids.slice(1,2);
+
+
+       if(p==="1"){
+        p="2";
+       }
+       else if(p==="2"){
+        p="1";
+       }
+       var q="m"+p;
+       console.log(q);
+       var r=document.getElementById(q);
+       o.classList.add("addColor3");
+       o.classList.remove("addColor4");
+       r.classList.remove("addColor3");
+       r.classList.add("addColor3");
+    }
+    var g1=document.getElementById("g1");
+    var g2=document.getElementById("g2");
+    var g3=document.getElementById("g3");
+    var g4=document.getElementById("g4");
+    var slid=document.getElementById("s11");
+    var color1=document.getElementById("e1");
+    var color2=document.getElementById("e2");
+    var color3=document.getElementById("e3");
+    var color4=document.getElementById("e4");
+
+    function slid1(ids){
+      g1.classList.add("show");
+      g1.classList.remove("hide");
+      g2.classList.add("hide");
+      g2.classList.remove("show");
+      g3.classList.add("hide");
+      g3.classList.remove("show");
+      g4.classList.add("hide");
+      g4.classList.remove("show");
+      slid.style.transform="translateX(0%)";
+      color1.classList.add("color");
+      color2.classList.remove("color");
+      color3.classList.remove("color");
+      color4.classList.remove("color");
+    }
+    function slid2(ids){
+      g2.classList.add("show");
+      g2.classList.remove("hide");
+      g1.classList.add("hide");
+      g1.classList.remove("show");
+      g3.classList.add("hide");
+      g3.classList.remove("show");
+      g4.classList.add("hide");
+      g4.classList.remove("show");
+      slid.style.transform="translateX(130%)";
+      color2.classList.add("color");
+      color1.classList.remove("color");
+      color3.classList.remove("color");
+      color4.classList.remove("color");
+    }
+    function slid3(ids){
+      g3.classList.add("show");
+      g3.classList.remove("hide");
+      g2.classList.add("hide");
+      g2.classList.remove("show");
+      g1.classList.add("hide");
+      g1.classList.remove("show");
+      g4.classList.add("hide");
+      g4.classList.remove("show");
+      slid.style.transform="translateX(260%)";
+      color3.classList.add("color");
+      color2.classList.remove("color");
+      color1.classList.remove("color");
+      color4.classList.remove("color");
+
+    }
+    function slid4(ids){
+      g4.classList.add("show");
+      g4.classList.remove("hide");
+      g2.classList.add("hide");
+      g2.classList.remove("show");
+      g3.classList.add("hide");
+      g3.classList.remove("show");
+      g1.classList.add("hide");
+      g1.classList.remove("show");
+      slid.style.transform="translateX(390%)";
+      color4.classList.add("color");
+      color2.classList.remove("color");
+      color3.classList.remove("color");
+      color1.classList.remove("color");
+    }
+</script>
+{% endblock %}

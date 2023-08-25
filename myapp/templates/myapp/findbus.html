@@ -1,0 +1,90 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% block content %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="{% static 'findbus.css' %}">
+<style>
+.t{
+position:relative;
+bottom:340px;
+right:55px;
+border:none;
+}
+
+.a{
+transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+position:relative;
+right:100px;
+height:50px;
+border:none;
+
+}
+.b{
+position:relative;
+right:604px;
+height:50px;
+border:none;
+transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+}
+.c{
+position:relative;
+transition:border-color .25s ease, box-shadow .25s ease;
+  &:focus {
+		outline:0;
+		border-color:$main;
+  }
+left:260px;
+bottom:50px;
+height:50px;
+border:none;
+width:200px;
+}
+.d{
+position:relative;
+right:245px;
+bottom:51px;
+paddig:10px;
+height:50px;
+width:150px;
+border:none;
+background-color:#D84E55;
+color:white;
+font-size:15px;
+
+}
+
+
+</style>
+
+<div >
+    <img width="100%" height="500px" src="https://couponswala.com/blog/wp-content/uploads/2020/07/redbus-ticket-cancel.png">
+    <div class="t">
+<form action="{% url 'findbus' %}"  method="post">
+    {% csrf_token %}
+    <input class="a" type="text"  placeholder=" &#128652; Source " name="source" required id="na">
+    <input class="b" type="text" placeholder=" &#128652; Destination" name="destination" required>
+    <input class="c" type="date"  name="date">
+    <button class="d" type="submit">Search Buses</button>
+    {{error}}
+
+</form>
+
+        </div>
+ </div>
+
+<img src="{% static 'bus.jpg' %}">
+<script>
+function yes(){
+    document.getElementById('na').style.background-color='red';}
+</script>
+{% endblock %}
